@@ -30,7 +30,12 @@ export class AppComponent {
 
   ricerca() { }
 
-  aggiorna() { }
+  aggiorna() {
+    this.http.get<RispostaDto>("http://localhost:8080/aggiorna")
+      .subscribe(r =>
+        this.prodotti = r.listaProdotti
+      );
+  }
 
   rimuovi() { }
 
