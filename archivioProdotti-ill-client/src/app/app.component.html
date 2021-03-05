@@ -1,0 +1,28 @@
+<input type="text" [(ngModel)]="prodotto.codice" placeholder="codice">
+<input type="text" [(ngModel)]="prodotto.descrizione" placeholder="descrizione">
+<input type="text" [(ngModel)]="prodotto.prezzo" placeholder="prezzo">
+<br>
+<button (click)="aggiungi()">Aggiungi</button>
+<input type="text" [(ngModel)]="search" placeholder="ricerca">
+<button (click)="ricerca()">Cerca</button>
+<br>
+<table>
+  <tr>
+    <th>Codice</th>
+    <th>Descrizione</th>
+    <th>Prezzo</th>
+    <th>Prezzo con IVA</th>
+  </tr>
+  <tr *ngFor="let p of prodotti">
+    <td>{{p.codice}}</td>
+    <td>{{p.descrizione}}</td>
+    <td>{{p.prezzo}}</td>
+    <td>{{prezzoIVA}}</td>
+    <button (click)="rimuovi()">X</button>
+    <button (click)="aggiorna()">Aggiorna</button>
+    <button (click)="calcolaSconto()">Sconto</button>
+  </tr>
+</table>
+<br>
+{{sconto}}
+<br>

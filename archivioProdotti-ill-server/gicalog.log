@@ -1,0 +1,13 @@
+2021-03-05 15:53:56.029 DEBUG 7156 --- [main] org.hibernate.SQL                        : create table hibernate_sequence (next_val bigint) engine=InnoDB
+2021-03-05 15:53:56.098 DEBUG 7156 --- [main] org.hibernate.SQL                        : insert into hibernate_sequence values ( 1 )
+2021-03-05 15:53:56.158 DEBUG 7156 --- [main] org.hibernate.SQL                        : create table prodotto (id bigint not null, codice varchar(255), descrizione varchar(255), prezzo double precision, primary key (id)) engine=InnoDB
+2021-03-05 15:53:56.824  WARN 7156 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-05 16:11:47.881  WARN 8608 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-05 16:11:59.859 DEBUG 8608 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-03-05 16:11:59.882 DEBUG 8608 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-03-05 16:11:59.934 DEBUG 8608 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : insert into prodotto (codice, descrizione, prezzo, id) values (?, ?, ?, ?)
+2021-03-05 16:11:59.937 TRACE 8608 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [trhrth]
+2021-03-05 16:11:59.938 TRACE 8608 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [thrht]
+2021-03-05 16:11:59.939 TRACE 8608 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [DOUBLE] - [32543.0]
+2021-03-05 16:11:59.940 TRACE 8608 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [BIGINT] - [1]
+2021-03-05 16:12:00.147 DEBUG 8608 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_ from prodotto prodotto0_
