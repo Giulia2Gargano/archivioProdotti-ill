@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { O_EXCL } from 'node:constants';
 import { Prodotto } from './prodotto';
 import { RicercaDto } from './ricerca-dto';
 import { RichiestaDto } from './richiesta-dto';
