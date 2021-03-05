@@ -27,8 +27,8 @@ public class ArchivioProdottiServiceImpl implements ArchivioProdottiService {
     }
 
     @Override
-    public RispostaDto ricerca(String stringa) {
-        List<Prodotto> prod = archivioProdottiRepository.findByCodiceContainsOrDescrizioneContains(stringa, stringa);
+    public RispostaDto ricerca(String ricerca) {
+        List<Prodotto> prod = archivioProdottiRepository.findByCodiceContainsOrDescrizioneContains(ricerca, ricerca);
         return new RispostaDto(prod);
     }
 

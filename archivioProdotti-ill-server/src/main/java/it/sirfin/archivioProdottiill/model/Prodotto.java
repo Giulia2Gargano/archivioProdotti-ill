@@ -1,4 +1,3 @@
-
 package it.sirfin.archivioProdottiill.model;
 
 import java.io.Serializable;
@@ -15,11 +14,11 @@ public class Prodotto implements Serializable {
     private Long Id;
 
     @Column
-    public String codice;
+    private String codice;
     @Column
-    public String descrizione;
+    private String descrizione;
     @Column
-    public double prezzo;
+    private double prezzo;
 
     public Prodotto() {
     }

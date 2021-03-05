@@ -25,19 +25,19 @@ export class AppComponent {
     dto.prodotto = this.prodotto;
     //preparo il REST
     let ox = this.http.post<RispostaDto>("http://localhost:8080/aggiungi", dto);
-    ox.subscribe(r =>{
+    ox.subscribe(r => {
       this.prodotti = r.listaProdotti
-  });
-  this.prodotto = new Prodotto();
+    });
+    this.prodotto = new Prodotto();
   }
 
   ricerca() {
     let ric = new RicercaDto();
-    ric.stringa = this.search;
+    ric.ricerca = this.search;
     this.http.post<RispostaDto>("http://localhost:8080/ricerca", ric)
-    .subscribe(r =>{
-      this.prodotti = r.listaProdotti;
-    })
+      .subscribe(r => {
+        this.prodotti = r.listaProdotti;      
+      });
   }
 
   aggiorna() {

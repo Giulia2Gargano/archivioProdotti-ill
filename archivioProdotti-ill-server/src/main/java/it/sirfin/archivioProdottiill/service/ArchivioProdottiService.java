@@ -20,5 +20,5 @@ public interface ArchivioProdottiService {
     
     RispostaDto aggiorna();
     
-    RispostaDto ricerca(String stringa);
+    RispostaDto ricerca(String ricerca);
 }
