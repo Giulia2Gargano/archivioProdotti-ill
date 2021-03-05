@@ -1,5 +1,6 @@
 package it.sirfin.archivioProdottiill.controller;
 
+import it.sirfin.archivioProdottiill.dto.RicercaDto;
 import it.sirfin.archivioProdottiill.dto.RichiestaDto;
 import it.sirfin.archivioProdottiill.dto.RispostaDto;
 import it.sirfin.archivioProdottiill.service.ArchivioProdottiService;
@@ -23,10 +24,16 @@ public class ArchivioProdottiController {
     public RispostaDto aggiungi(@RequestBody RichiestaDto dto) {
         return archivioProdottiService.aggiungi(dto.getProdotto());
     }
-    
+
     @RequestMapping("/aggiorna")
     @ResponseBody
     public RispostaDto aggiorna() {
         return archivioProdottiService.aggiorna();
+    }
+
+    @RequestMapping("/ricerca")
+    @ResponseBody
+    public RispostaDto ricerca(@RequestBody RicercaDto stringa) {
+        return archivioProdottiService.ricerca(stringa.getRicerca());
     }
 }

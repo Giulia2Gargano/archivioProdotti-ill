@@ -6,10 +6,12 @@
 package it.sirfin.archivioProdottiill.repository;
 
 import it.sirfin.archivioProdottiill.model.Prodotto;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ArchivioProdottiRepository extends JpaRepository<Prodotto, Long> {
 
+    List<Prodotto> findByCodiceContainsOrDescrizioneContains(String c, String d);
 }

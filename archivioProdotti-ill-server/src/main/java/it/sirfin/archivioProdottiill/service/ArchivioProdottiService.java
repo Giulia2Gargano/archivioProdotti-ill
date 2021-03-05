@@ -19,4 +19,6 @@ public interface ArchivioProdottiService {
     RispostaDto aggiungi(Prodotto prod);
     
     RispostaDto aggiorna();
+    
+    RispostaDto ricerca(String stringa);
 }

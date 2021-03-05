@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { O_EXCL } from 'node:constants';
 import { Prodotto } from './prodotto';
+import { RicercaDto } from './ricerca-dto';
 import { RichiestaDto } from './richiesta-dto';
 import { RispostaDto } from './risposta-dto';
 
@@ -15,6 +17,7 @@ export class AppComponent {
   prodotti: Prodotto[] = [];
   search = "";
   sconto = 0;
+  prezzoIVA = 0;
   constructor(private http: HttpClient) { }
 
   aggiungi() {
@@ -23,12 +26,20 @@ export class AppComponent {
     dto.prodotto = this.prodotto;
     //preparo il REST
     let ox = this.http.post<RispostaDto>("http://localhost:8080/aggiungi", dto);
-    ox.subscribe(r =>
+    ox.subscribe(r =>{
       this.prodotti = r.listaProdotti
-    );
+  });
+  this.prodotto = new Prodotto();
   }
 
-  ricerca() { }
+  ricerca() {
+    let ric = new RicercaDto();
+    ric.stringa = this.search;
+    this.http.post<RispostaDto>("http://localhost:8080/ricerca", ric)
+    .subscribe(r =>{
+      this.prodotti = r.listaProdotti;
+    })
+  }
 
   aggiorna() {
     this.http.get<RispostaDto>("http://localhost:8080/aggiorna")
