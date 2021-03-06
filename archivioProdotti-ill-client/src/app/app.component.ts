@@ -43,7 +43,9 @@ export class AppComponent {
   }
 
   aggiorna() {
-    this.http.get<RispostaDto>("http://localhost:8080/aggiorna")
+    let ric = new RicercaDto();
+    ric.ricerca = this.search;
+    this.http.post<RispostaDto>("http://localhost:8080/aggiorna", ric)
       .subscribe(r =>
         this.prodotti = r.listaProdotti
       );

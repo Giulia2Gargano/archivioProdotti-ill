@@ -28,8 +28,8 @@ public class ArchivioProdottiController {
 
     @RequestMapping("/aggiorna")
     @ResponseBody
-    public RispostaDto aggiorna() {
-        return archivioProdottiService.aggiorna();
+    public RispostaDto aggiorna(@RequestBody RicercaDto dto) {
+        return archivioProdottiService.aggiornaFiltrato(dto.getRicerca());
     }
 
     @RequestMapping("/ricerca")

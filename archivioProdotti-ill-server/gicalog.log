@@ -2614,3 +2614,83 @@ java.lang.IllegalArgumentException: Value must not be null!
 2021-03-06 11:35:06.228 TRACE 3948 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [DOUBLE] - [122.0]
 2021-03-06 11:35:06.228 TRACE 3948 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [BIGINT] - [4]
 2021-03-06 11:35:06.303 DEBUG 3948 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzoiva as prezzoiv5_0_ from prodotto prodotto0_
+2021-03-06 23:55:41.638  WARN 9560 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-06 23:55:57.609 DEBUG 9560 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-03-06 23:55:57.640 DEBUG 9560 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-03-06 23:55:57.699 DEBUG 9560 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : insert into prodotto (codice, descrizione, prezzo, prezzoiva, id) values (?, ?, ?, ?, ?)
+2021-03-06 23:55:57.701 TRACE 9560 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Carla]
+2021-03-06 23:55:57.701 TRACE 9560 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - []
+2021-03-06 23:55:57.701 TRACE 9560 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [DOUBLE] - [10.0]
+2021-03-06 23:55:57.702 TRACE 9560 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [DOUBLE] - [12.2]
+2021-03-06 23:55:57.702 TRACE 9560 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [BIGINT] - [5]
+2021-03-06 23:55:57.773 DEBUG 9560 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzoiva as prezzoiv5_0_ from prodotto prodotto0_
+2021-03-06 23:55:59.397 DEBUG 9560 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select prodotto0_.id as id1_0_0_, prodotto0_.codice as codice2_0_0_, prodotto0_.descrizione as descrizi3_0_0_, prodotto0_.prezzo as prezzo4_0_0_, prodotto0_.prezzoiva as prezzoiv5_0_0_ from prodotto prodotto0_ where prodotto0_.id=?
+2021-03-06 23:55:59.398 TRACE 9560 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [4]
+2021-03-06 23:55:59.404 DEBUG 9560 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : delete from prodotto where id=?
+2021-03-06 23:55:59.405 TRACE 9560 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [4]
+2021-03-06 23:55:59.414 DEBUG 9560 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzoiva as prezzoiv5_0_ from prodotto prodotto0_
+2021-03-06 23:56:11.638 DEBUG 9560 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzoiva as prezzoiv5_0_ from prodotto prodotto0_ where prodotto0_.codice like ? escape ? or prodotto0_.descrizione like ? escape ?
+2021-03-06 23:56:11.639 TRACE 9560 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [%L%]
+2021-03-06 23:56:11.639 TRACE 9560 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [CHAR] - [\]
+2021-03-06 23:56:11.639 TRACE 9560 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [%L%]
+2021-03-06 23:56:11.639 TRACE 9560 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [CHAR] - [\]
+2021-03-06 23:56:12.459 DEBUG 9560 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzoiva as prezzoiv5_0_ from prodotto prodotto0_ where prodotto0_.codice like ? escape ? or prodotto0_.descrizione like ? escape ?
+2021-03-06 23:56:12.460 TRACE 9560 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [%L%]
+2021-03-06 23:56:12.461 TRACE 9560 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [CHAR] - [\]
+2021-03-06 23:56:12.461 TRACE 9560 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [%L%]
+2021-03-06 23:56:12.461 TRACE 9560 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [CHAR] - [\]
+2021-03-06 23:56:12.887 DEBUG 9560 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzoiva as prezzoiv5_0_ from prodotto prodotto0_ where prodotto0_.codice like ? escape ? or prodotto0_.descrizione like ? escape ?
+2021-03-06 23:56:12.887 TRACE 9560 --- [http-nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [%L%]
+2021-03-06 23:56:12.888 TRACE 9560 --- [http-nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [CHAR] - [\]
+2021-03-06 23:56:12.888 TRACE 9560 --- [http-nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [%L%]
+2021-03-06 23:56:12.888 TRACE 9560 --- [http-nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [CHAR] - [\]
+2021-03-06 23:56:13.063 DEBUG 9560 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzoiva as prezzoiv5_0_ from prodotto prodotto0_ where prodotto0_.codice like ? escape ? or prodotto0_.descrizione like ? escape ?
+2021-03-06 23:56:13.064 TRACE 9560 --- [http-nio-8080-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [%L%]
+2021-03-06 23:56:13.064 TRACE 9560 --- [http-nio-8080-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [CHAR] - [\]
+2021-03-06 23:56:13.064 TRACE 9560 --- [http-nio-8080-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [%L%]
+2021-03-06 23:56:13.065 TRACE 9560 --- [http-nio-8080-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [CHAR] - [\]
+2021-03-06 23:56:13.242 DEBUG 9560 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzoiva as prezzoiv5_0_ from prodotto prodotto0_ where prodotto0_.codice like ? escape ? or prodotto0_.descrizione like ? escape ?
+2021-03-06 23:56:13.243 TRACE 9560 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [%L%]
+2021-03-06 23:56:13.243 TRACE 9560 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [CHAR] - [\]
+2021-03-06 23:56:13.243 TRACE 9560 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [%L%]
+2021-03-06 23:56:13.243 TRACE 9560 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [CHAR] - [\]
+2021-03-06 23:56:13.379 DEBUG 9560 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzoiva as prezzoiv5_0_ from prodotto prodotto0_ where prodotto0_.codice like ? escape ? or prodotto0_.descrizione like ? escape ?
+2021-03-06 23:56:13.380 TRACE 9560 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [%L%]
+2021-03-06 23:56:13.381 TRACE 9560 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [CHAR] - [\]
+2021-03-06 23:56:13.381 TRACE 9560 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [%L%]
+2021-03-06 23:56:13.381 TRACE 9560 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [CHAR] - [\]
+2021-03-06 23:56:13.632 DEBUG 9560 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzoiva as prezzoiv5_0_ from prodotto prodotto0_ where prodotto0_.codice like ? escape ? or prodotto0_.descrizione like ? escape ?
+2021-03-06 23:56:13.633 TRACE 9560 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [%L%]
+2021-03-06 23:56:13.633 TRACE 9560 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [CHAR] - [\]
+2021-03-06 23:56:13.633 TRACE 9560 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [%L%]
+2021-03-06 23:56:13.633 TRACE 9560 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [CHAR] - [\]
+2021-03-06 23:56:13.797 DEBUG 9560 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzoiva as prezzoiv5_0_ from prodotto prodotto0_ where prodotto0_.codice like ? escape ? or prodotto0_.descrizione like ? escape ?
+2021-03-06 23:56:13.797 TRACE 9560 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [%L%]
+2021-03-06 23:56:13.797 TRACE 9560 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [CHAR] - [\]
+2021-03-06 23:56:13.797 TRACE 9560 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [%L%]
+2021-03-06 23:56:13.797 TRACE 9560 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [CHAR] - [\]
+2021-03-06 23:56:13.957 DEBUG 9560 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzoiva as prezzoiv5_0_ from prodotto prodotto0_ where prodotto0_.codice like ? escape ? or prodotto0_.descrizione like ? escape ?
+2021-03-06 23:56:13.958 TRACE 9560 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [%L%]
+2021-03-06 23:56:13.958 TRACE 9560 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [CHAR] - [\]
+2021-03-06 23:56:13.958 TRACE 9560 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [%L%]
+2021-03-06 23:56:13.958 TRACE 9560 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [CHAR] - [\]
+2021-03-06 23:56:14.091 DEBUG 9560 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzoiva as prezzoiv5_0_ from prodotto prodotto0_ where prodotto0_.codice like ? escape ? or prodotto0_.descrizione like ? escape ?
+2021-03-06 23:56:14.092 TRACE 9560 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [%L%]
+2021-03-06 23:56:14.092 TRACE 9560 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [CHAR] - [\]
+2021-03-06 23:56:14.092 TRACE 9560 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [%L%]
+2021-03-06 23:56:14.092 TRACE 9560 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [CHAR] - [\]
+2021-03-06 23:56:16.216 DEBUG 9560 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzoiva as prezzoiv5_0_ from prodotto prodotto0_ where prodotto0_.codice like ? escape ? or prodotto0_.descrizione like ? escape ?
+2021-03-06 23:56:16.217 TRACE 9560 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [%%]
+2021-03-06 23:56:16.217 TRACE 9560 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [CHAR] - [\]
+2021-03-06 23:56:16.217 TRACE 9560 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [%%]
+2021-03-06 23:56:16.217 TRACE 9560 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [CHAR] - [\]
+2021-03-06 23:56:19.298 DEBUG 9560 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzoiva as prezzoiv5_0_ from prodotto prodotto0_ where prodotto0_.codice like ? escape ? or prodotto0_.descrizione like ? escape ?
+2021-03-06 23:56:19.299 TRACE 9560 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [%l%]
+2021-03-06 23:56:19.300 TRACE 9560 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [CHAR] - [\]
+2021-03-06 23:56:19.300 TRACE 9560 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [%l%]
+2021-03-06 23:56:19.300 TRACE 9560 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [CHAR] - [\]
+2021-03-06 23:56:21.580 DEBUG 9560 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select prodotto0_.id as id1_0_, prodotto0_.codice as codice2_0_, prodotto0_.descrizione as descrizi3_0_, prodotto0_.prezzo as prezzo4_0_, prodotto0_.prezzoiva as prezzoiv5_0_ from prodotto prodotto0_ where prodotto0_.codice like ? escape ? or prodotto0_.descrizione like ? escape ?
+2021-03-06 23:56:21.580 TRACE 9560 --- [http-nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [%%]
+2021-03-06 23:56:21.580 TRACE 9560 --- [http-nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [CHAR] - [\]
+2021-03-06 23:56:21.581 TRACE 9560 --- [http-nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [%%]
+2021-03-06 23:56:21.581 TRACE 9560 --- [http-nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [CHAR] - [\]

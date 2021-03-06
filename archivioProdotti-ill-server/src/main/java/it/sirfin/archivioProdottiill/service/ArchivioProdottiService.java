@@ -21,6 +21,8 @@ public interface ArchivioProdottiService {
 
     RispostaDto aggiorna();
 
+    RispostaDto aggiornaFiltrato(String ricerca);
+
     RispostaDto ricerca(String ricerca);
 
     RispostaDto rimuovi(Prodotto prod);

@@ -45,4 +45,10 @@ public class ArchivioProdottiServiceImpl implements ArchivioProdottiService {
         return new ScontoDto(sc);
     }
 
+    @Override
+    public RispostaDto aggiornaFiltrato(String ricerca) {
+        List<Prodotto> l = archivioProdottiRepository.findByCodiceContainsOrDescrizioneContains(ricerca, ricerca);
+        return new RispostaDto(l);
+    }
+
 }
