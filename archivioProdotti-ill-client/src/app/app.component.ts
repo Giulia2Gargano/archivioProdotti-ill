@@ -17,7 +17,9 @@ export class AppComponent {
   prodotti: Prodotto[] = [];
   search = "";
   sconto = 0;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.aggiorna();
+  }
 
   aggiungi() {
     //dati da inviare al server
