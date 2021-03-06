@@ -32,4 +32,10 @@ public class ArchivioProdottiServiceImpl implements ArchivioProdottiService {
         return new RispostaDto(prod);
     }
 
+    @Override
+    public RispostaDto rimuovi(Prodotto prod) {
+        archivioProdottiRepository.delete(prod);
+        return aggiorna();
+    }
+
 }

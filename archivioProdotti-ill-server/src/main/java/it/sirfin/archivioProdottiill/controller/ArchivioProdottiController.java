@@ -14,26 +14,33 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin("*")
 @RestController
 public class ArchivioProdottiController {
-
+    
     @Autowired
     ArchivioProdottiService archivioProdottiService;
-
+    
     @RequestMapping("/aggiungi")
     @ResponseBody
-
+    
     public RispostaDto aggiungi(@RequestBody RichiestaDto dto) {
         return archivioProdottiService.aggiungi(dto.getProdotto());
     }
-
+    
     @RequestMapping("/aggiorna")
     @ResponseBody
     public RispostaDto aggiorna() {
         return archivioProdottiService.aggiorna();
     }
-
+    
     @RequestMapping("/ricerca")
     @ResponseBody
     public RispostaDto ricerca(@RequestBody RicercaDto stringa) {
         return archivioProdottiService.ricerca(stringa.getRicerca());
     }
+    
+    @RequestMapping("/rimuovi")
+    @ResponseBody
+    public RispostaDto rimuovi(@RequestBody RichiestaDto dto) {
+        return archivioProdottiService.rimuovi(dto.getProdotto());
+    }
+    
 }

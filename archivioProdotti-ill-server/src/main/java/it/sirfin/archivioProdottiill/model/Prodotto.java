@@ -19,14 +19,17 @@ public class Prodotto implements Serializable {
     private String descrizione;
     @Column
     private double prezzo;
+    @Column
+    private double prezzoIVA;
 
     public Prodotto() {
     }
 
-    public Prodotto(String codice, String descrizione, double prezzo) {
+    public Prodotto(String codice, String descrizione, double prezzo, double prezzoIVA) {
         this.codice = codice;
         this.descrizione = descrizione;
         this.prezzo = prezzo;
+        this.prezzoIVA = prezzoIVA;
     }
 
     public Long getId() {
@@ -61,8 +64,18 @@ public class Prodotto implements Serializable {
         this.prezzo = prezzo;
     }
 
+    public double getPrezzoIVA() {
+        return prezzoIVA;
+    }
+
+    public void setPrezzoIVA(double prezzoIVA) {
+        this.prezzoIVA = prezzoIVA;
+    }
+
     @Override
     public String toString() {
-        return "Prodotto{" + "Id=" + Id + ", codice=" + codice + ", descrizione=" + descrizione + ", prezzo=" + prezzo + '}';
+        return "Prodotto{" + "Id=" + Id + ", codice=" + codice + ", descrizione=" + descrizione + ", prezzo=" + prezzo + ", prezzoIVA=" + prezzoIVA + '}';
     }
+
+  
 }

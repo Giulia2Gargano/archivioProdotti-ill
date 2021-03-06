@@ -20,8 +20,8 @@
     <td>{{p.codice}}</td>
     <td>{{p.descrizione}}</td>
     <td>{{p.prezzo}}</td>
-    <td>{{prezzoIVA}}</td>
-    <button (click)="rimuovi()">X</button>
+    <td>{{p.prezzoIVA}}</td>
+    <button (click)="rimuovi(p)">X</button>
     <button (click)="calcolaSconto()">Sconto</button>
   </tr>
 </table>

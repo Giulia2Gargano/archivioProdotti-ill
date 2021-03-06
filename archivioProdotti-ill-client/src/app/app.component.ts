@@ -16,19 +16,20 @@ export class AppComponent {
   prodotti: Prodotto[] = [];
   search = "";
   sconto = 0;
-  prezzoIVA = 0;
   constructor(private http: HttpClient) { }
 
   aggiungi() {
     //dati da inviare al server
     let dto = new RichiestaDto();
     dto.prodotto = this.prodotto;
+    dto.prodotto.prezzoIVA = dto.prodotto.prezzo * 1.22;
     //preparo il REST
     let ox = this.http.post<RispostaDto>("http://localhost:8080/aggiungi", dto);
     ox.subscribe(r => {
       this.prodotti = r.listaProdotti
     });
     this.prodotto = new Prodotto();
+    this.search = "";
   }
 
   ricerca() {
@@ -36,7 +37,7 @@ export class AppComponent {
     ric.ricerca = this.search;
     this.http.post<RispostaDto>("http://localhost:8080/ricerca", ric)
       .subscribe(r => {
-        this.prodotti = r.listaProdotti;      
+        this.prodotti = r.listaProdotti;
       });
   }
 
@@ -47,7 +48,14 @@ export class AppComponent {
       );
   }
 
-  rimuovi() { }
+  rimuovi(p: Prodotto) {
+    let rim = new RichiestaDto();
+    rim.prodotto = p;
+    this.http.post<RispostaDto>("http://localhost:8080/rimuovi", rim)
+      .subscribe(r =>
+        this.prodotti = r.listaProdotti
+      );
+  }
 
   calcolaSconto() { }
 
