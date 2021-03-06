@@ -1,6 +1,7 @@
 package it.sirfin.archivioProdottiill.service.impl;
 
 import it.sirfin.archivioProdottiill.dto.RispostaDto;
+import it.sirfin.archivioProdottiill.dto.ScontoDto;
 import it.sirfin.archivioProdottiill.model.Prodotto;
 import it.sirfin.archivioProdottiill.repository.ArchivioProdottiRepository;
 import it.sirfin.archivioProdottiill.service.ArchivioProdottiService;
@@ -36,6 +37,12 @@ public class ArchivioProdottiServiceImpl implements ArchivioProdottiService {
     public RispostaDto rimuovi(Prodotto prod) {
         archivioProdottiRepository.delete(prod);
         return aggiorna();
+    }
+
+    @Override
+    public ScontoDto sconto(Prodotto prod) {
+        double sc = prod.getPrezzo() * 0.7;
+        return new ScontoDto(sc);
     }
 
 }

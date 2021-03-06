@@ -4,6 +4,7 @@ import { Prodotto } from './prodotto';
 import { RicercaDto } from './ricerca-dto';
 import { RichiestaDto } from './richiesta-dto';
 import { RispostaDto } from './risposta-dto';
+import { ScontoDto } from './sconto-dto';
 
 @Component({
   selector: 'app-root',
@@ -57,8 +58,13 @@ export class AppComponent {
       );
   }
 
-  calcolaSconto() { }
-
-
+  calcolaSconto(p: Prodotto) {
+    let scon = new RichiestaDto();
+    scon.prodotto = p;
+    this.http.post<ScontoDto>("http://localhost:8080/sconto", scon)
+      .subscribe(r =>
+        this.sconto = r.prezzoScontato
+      );
+  }
 }
 

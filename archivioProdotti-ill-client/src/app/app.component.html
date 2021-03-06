@@ -22,9 +22,9 @@
     <td>{{p.prezzo}}</td>
     <td>{{p.prezzoIVA}}</td>
     <button (click)="rimuovi(p)">X</button>
-    <button (click)="calcolaSconto()">Sconto</button>
+    <button (click)="calcolaSconto(p)">Sconto</button>
   </tr>
 </table>
 <br>
-{{sconto}}
+Il prezzo scontato è &euro; {{sconto}}
 <br>

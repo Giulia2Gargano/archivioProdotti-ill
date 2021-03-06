@@ -7,6 +7,7 @@ package it.sirfin.archivioProdottiill.service;
 
 import it.sirfin.archivioProdottiill.dto.RichiestaDto;
 import it.sirfin.archivioProdottiill.dto.RispostaDto;
+import it.sirfin.archivioProdottiill.dto.ScontoDto;
 import it.sirfin.archivioProdottiill.model.Prodotto;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -15,12 +16,14 @@ import org.springframework.web.bind.annotation.RequestBody;
  * @author Hp
  */
 public interface ArchivioProdottiService {
-    
+
     RispostaDto aggiungi(Prodotto prod);
-    
+
     RispostaDto aggiorna();
-    
+
     RispostaDto ricerca(String ricerca);
-    
+
     RispostaDto rimuovi(Prodotto prod);
+
+    ScontoDto sconto(Prodotto prod);
 }
